@@ -4,14 +4,14 @@ import org.openqa.selenium.support.FindBy;
 
 public class LoginForm extends PageObject{
 
-    private final String USERNAME = "standar_user";
+    private final String USERNAME = "standard_user";
     private final String PASSWORD = "secret_sauce";
 
     public LoginForm(WebDriver driver) {
         super(driver);
     }
 
-    @FindBy(id="user_name")
+    @FindBy(id="user-name")
     private WebElement username;
 
     @FindBy(id="password")
