@@ -56,6 +56,19 @@ public class TestPlan {
         productsPage.logout();
     }
 
+    @Test(testName = "Add one item to cart")
+    public static void verifyItemAdded() {
+        driver.get(Utils.BASE_URL);
+        LoginForm loginform = new LoginForm(driver);
+        loginform.enterUsername();
+        loginform.enterPassword();
+        loginform.pressLoginButton();
+
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        ProductPage productsPage = new ProductPage(driver);
+        productsPage.addToCartBackpack();
+        Assert.assertEquals(productsPage.getCardBadge(),"1");
+    }
 
     @AfterSuite
     public static void cleanUp(){

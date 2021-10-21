@@ -27,9 +27,7 @@ public class ProductPage extends PageObject{
         return this.productsLabel.getText();
     }
 
-    public void addToCartBackpack(){
-        this.addToCart_SauceLabsBackpack.click();
-    }
+    public void addToCartBackpack(){ this.addToCart_SauceLabsBackpack.click(); }
 
     public String getCardBadge(){
         return this.carrito.getText();
